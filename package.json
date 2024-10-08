@@ -1,0 +1,28 @@
+{
+  "type": "module",
+  "name": "fulltack-backend-zero",
+  "version": "1.0.0",
+  "description": "fulltakc backend zero",
+  "main": "sever.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node sever.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Quyhaha102/udemy-fulltack-backend-zero.git"
+  },
+  "keywords": [
+    "nodejs",
+    "react"
+  ],
+  "author": "Quy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Quyhaha102/udemy-fulltack-backend-zero/issues"
+  },
+  "homepage": "https://github.com/Quyhaha102/udemy-fulltack-backend-zero#readme",
+  "dependencies": {
+    "express": "4.18.2"
+  }
+}
