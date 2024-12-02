@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Update A User</title>
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+
+    <body> 
+        <div class="topnav">
+            <a href="/">Home</a>
+            <a href="/create">Create</a>
+        </div>
+        <div>
+            <div class="form-add-new">
+                <form action="/update-user" method="post">
+                    <fieldset>
+                        <legend>Update a user</legend>
+                        <div class="input-group d-none">
+                            <label for="">Id:</label>
+                            <input
+                                type="text"
+                                name="userId"
+                                value="<%= userEdit.id %>"
+                            />
+                        </div>
+                        <div class="input-group"> 
+                            <label for="">Email:</label>
+                            <input
+                                type="text"
+                                name="email"
+                                value="<%= userEdit.email %>"
+                            />
+                        </div>
+                        <div class="input-group">
+                            <label for="">Name:</label>
+                            <input
+                                type="text"
+                                name="name"
+                                value="<%= userEdit.name %>"
+                            />
+                        </div>
+                        <div class="input-group">
+                            <label for="">City:</label>
+                            <input
+                                type="text"
+                                name="city"
+                                value="<%= userEdit.city %>"
+                            />
+                        </div>
+                        <div>
+                            <button >Save</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

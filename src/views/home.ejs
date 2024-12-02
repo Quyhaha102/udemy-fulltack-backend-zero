@@ -6,38 +6,76 @@
         <title>Document</title>
         <link rel="stylesheet" href="/css/style.css" />
     </head>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
 
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: coral;
+        }
+        .table-container {
+            padding: 15px 20px;
+        }
+        .title {
+            font-size: 25px;
+            font-weight: 600;
+            padding-bottom: 10px;
+        }
+    </style>
     <body>
         <div class="topnav">
-            <a class="active" href="#home">Home</a>
-            <a href="#news">News</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
+            <a class="active" href="/">Home</a>
+            <a href="/create">Create</a>
         </div>
-        <div>
-            <div class="form-add-new">
-                <form action="/create-user" method="post">
-                    <fieldset>
-                        <legend>Add new users</legend>
+        <div class="table-container">
+            <!-- <%= JSON.stringify(listUsers) %> -->
+            <div class="title">List Users</div>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Actions</th>
+                </tr>
 
-                        <div class="input-group">
-                            <label for="">Email:</label>
-                            <input type="text" id="emailId" name="Email" />
-                        </div>
-                        <div class="input-group">
-                            <label for="">Name:</label>
-                            <input type="text" name="Name" />
-                        </div>
-                        <div class="input-group">
-                            <label for="">City:</label>
-                            <input type="text" name="City" />
-                        </div>
-                        <div>
-                            <button>Save</button>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
+                <!-- <% for (var i = 0; i < listUsers.length; i++) { %>
+                <tr>
+                    <th><%=listUsers[i].id %></th>
+                    <th><%=listUsers[i].email %></th>
+                    <th><%=listUsers[i].name %></th>
+                    <th><%=listUsers[i].city %></th>
+                    <th>
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </th>
+                </tr>
+
+                <% } %> -->
+                <% listUsers.forEach(function(user) { %>
+                <tr>
+                    <th><%=user.id %></th>
+                    <th><%=user.email %></th>
+                    <th><%=user.name %></th>
+                    <th><%=user.city %></th>
+                    <th>
+                        <a href="/update/<%=user.id %>">Edit</a>
+                        <form action="/delete-user/<%=user.id %>" method="post">
+                            <button>Delete</button>
+                        </form>
+                    </th>
+                </tr>
+                <% }); %>
+            </table>
         </div>
     </body>
 </html>
